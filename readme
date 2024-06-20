@@ -1,1 +1,21 @@
-implemented assertion intereface
+```php
+  //Example
+  $assertion = new AssertGroup(true);
+  $assertion
+      ->andX(true, true, true)
+      ->andX(true, true, false);
+  var_dump($assertion->getResult());
+  // false
+
+  $assertion = new AssertGroup(true);
+  $assertion
+      ->andX(true, true, true)
+      ->andX(true, true, false);
+$point = [];
+$point[2] = 'text';
+  $assertion
+      ->orX(isset($point[0]))
+      ->orX(isset($point[1]))
+      ->orX(isset($point[2]));
+var_dump($assertion->getResult());
+// true
