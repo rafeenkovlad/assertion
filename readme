@@ -16,6 +16,6 @@ $point[2] = 'text';
   $assertion
       ->orX(isset($point[0]))
       ->orX(isset($point[1]))
-      ->orX(isset($point[2]));
+      ->orX(isset($point[2]), isset($point[3]), isset($point[4]));
 var_dump($assertion->getResult());
 // true
